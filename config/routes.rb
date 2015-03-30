@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :movies
+  resources :movies, :viewing_parties
   root "movies#index"
 
   # The priority is based upon order of creation: first created -> highest priority.
