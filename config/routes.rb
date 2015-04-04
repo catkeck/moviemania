@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   devise_for :users
+  get '/profile' => "users#show"
   resources :movies
   resources :viewing_parties do
     post '/join' => 'viewing_parties#join'
