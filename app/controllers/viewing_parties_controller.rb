@@ -6,13 +6,19 @@ class ViewingPartiesController < ApplicationController
   end
 
   def create
-    puts params
     @viewing_party = ViewingParty.create(viewing_party_params)
-    redirect_to @viewing_party
+    if @viewing_party.save
+      @viewing_party.users.push(current_user)
+      redirect_to viewing_party_path(@viewing_party.id)
+    else
+      render 'new'
+    end
   end
 
   def show
     @viewing_party = ViewingParty.find(params[:id])
+    @movie = @viewing_party.movie
+    @user = current_user
   end
 
   def viewing_party_params
@@ -32,10 +38,19 @@ class ViewingPartiesController < ApplicationController
 
     params[:viewing_party][:viewing_time] = viewing_time
 
-    p "test"
-    p params[:viewing_party]
-
     params.require(:viewing_party).permit(:viewing_time, :theater, :movie_id)
+  end
+
+  def join
+    @viewing_party = ViewingParty.find(params[:viewing_party_id])
+    @viewing_party.users.push(current_user)
+    redirect_to @viewing_party
+  end
+
+  def leave
+    @viewing_party = ViewingParty.find(params[:viewing_party_id])
+    @viewing_party.users.delete(current_user)
+    redirect_to @viewing_party
   end
 
 end

@@ -1,0 +1,18 @@
+<br /> <br />
+<h1> <%= @movie.name %> </h1> <br />
+<%= @movie.description %> <br />
+<img src = <%= @movie.movie_poster%> style="width:350px;height:500px"> <br>
+<iframe type="text/html"
+<iframe width="560" height="315" src=<%= @movie.trailer%> frameborder="0" allowfullscreen></iframe>
+
+<% if @viewing_party.users.include? @user %>
+  <%= link_to 'leave', viewing_party_leave_path(@viewing_party), :method=> :post %>
+<% else %>
+  <%= link_to 'join', viewing_party_join_path(@viewing_party), :method=> :post %>
+<% end %>
+
+<% @viewing_party.users.each do |user| %>
+  <%= user.username %> <br>
+  <%= user.email %> <br>
+  <%= user %> <br>
+<% end %>

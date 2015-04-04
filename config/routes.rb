@@ -1,8 +1,14 @@
 Rails.application.routes.draw do
 
   devise_for :users
-  resources :movies, :viewing_parties
+  resources :movies
+  resources :viewing_parties do
+    post '/join' => 'viewing_parties#join'
+    post '/leave' => 'viewing_parties#leave'
+  end
   root "movies#index"
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
