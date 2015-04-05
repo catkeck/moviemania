@@ -1,3 +1,3 @@
 <% @user.viewing_parties.each do |viewing_party| %>
-  <%= viewing_party %>
+  <%= link_to viewing_party.movie.name, viewing_party_path(viewing_party) %>
 <% end %>
