@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :viewing_parties do
     post '/join' => 'viewing_parties#join'
     post '/leave' => 'viewing_parties#leave'
+    resources :comments, :only => [:create]
   end
   root "movies#index"
 

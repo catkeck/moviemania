@@ -6,4 +6,5 @@ class User < ActiveRecord::Base
 	#has_and_belongs_to_many :viewing_parties
   has_many :user_viewing_parties
   has_many :viewing_parties, :through => :user_viewing_parties
+  has_many :comments
 end

@@ -1,5 +1,5 @@
- <h1> Welcome <%= @user.username %></h1>
-
+ <h1> Welcome <%= @user.username%> </h1>
+<h3> Movies currently playing: </h3> <br>
  <% @movies.each do |movie| %>
  	<%= link_to(image_tag(movie.movie_poster, height: 300), movie) %> 
  <% end %> 

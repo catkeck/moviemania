@@ -5,12 +5,30 @@
 <iframe type="text/html"
 <iframe width="560" height="315" src=<%= @movie.trailer%> frameborder="0" allowfullscreen></iframe>
 <br />
+
+This party will take place in <%= @viewing_party.theater %>, at <%= @viewing_party.viewing_time%>
 <% if @viewing_party.users.include? @user %>
   <%= link_to 'leave', viewing_party_leave_path(@viewing_party), :method=> :post %>
 <% else %>
   <%= link_to 'join', viewing_party_join_path(@viewing_party), :method=> :post %>
 <% end %>
 <br />
+<br />
+<br />
+Current people going: <br/>
 <% @viewing_party.users.each do |user| %>
-  <%= user.username %> <br>
+  <%= user.username %> <br />
+<% end %>
+
+<h2> Comments </h2>
+<div id = "comments">
+  <%= render :partial => @viewing_party.comments %>
+</div>
+
+<%= form_for [@viewing_party, Comment.new] do |form| %>
+  <p>
+    <%= form.label :body, "New comment" %><br/>
+    <%= form.text_area :body %>
+  </p>
+  <p><%= form.submit "Add comment" %></p>
 <% end %>
