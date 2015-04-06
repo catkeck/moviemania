@@ -12,6 +12,19 @@ class MoviesController < ApplicationController
 		@movie = Movie.find(params[:id])
 	end
 
+  def edit
+    @movie = Movie.find(params[:id])
+  end
+
+  def update
+    @movie = Movie.find(params[:id])
+
+    if @movie.update_attributes(movie_params)
+      redirect_to movies_path
+    else
+      render :edit
+    end
+  end
 #This is for adding movies and should only be able to be done by me as the administrator
   def create
     @movie = Movie.create(movie_params)

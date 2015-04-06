@@ -5,6 +5,10 @@ class ViewingPartiesController < ApplicationController
     @viewing_party = ViewingParty.new
   end
 
+  def index
+    @viewing_parties = ViewingParty.all
+  end
+
   def create
     @viewing_party = ViewingParty.create(viewing_party_params)
     if @viewing_party.save

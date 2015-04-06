@@ -1,0 +1,11 @@
+<%= form_for @movie do |form| %>
+  <%= form.label :name %> <br />
+  <%= form.text_field :name %> <br />
+  <%= form.label :description %> <br />
+  <%= form.text_area :description %><br />
+  <%= form.label :trailer %> <br />
+  <%= form.text_field :trailer %> <br/>
+  <%= form.label :movie_poster %> <br />
+  <%= form.text_field :movie_poster %><br />
+  <%= form.submit "Add new film" %><br />
+<% end %>

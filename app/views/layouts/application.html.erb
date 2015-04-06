@@ -52,6 +52,7 @@
           <ul class="nav navbar-nav">
             <li><%= link_to "My Profile", profile_path %></li>
             <li><%= link_to "Create a New Hangout", new_viewing_party_path  %></li>
+            <li><%= link_to "List of Hangouts", viewing_parties_path  %></li>
             </ul>
             <p class="navbar-text pull-right">
               <% if user_signed_in? %>
