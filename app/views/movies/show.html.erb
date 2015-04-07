@@ -1,3 +1,5 @@
+
+
 <br /> <br />
 <h1> <%= @movie.name %> </h1> <br />
 <%= @movie.description %> <br />
@@ -5,5 +7,7 @@
 <iframe type="text/html"
 <iframe width="560" height="315" src=<%= @movie.trailer%> frameborder="0" allowfullscreen></iframe>
 <br />
+
+<%= @rotten_tomato.synopsis %>
 <h3> Want to see the movie? Select one of the meetups below or create your own hang out! </h3>
 <%= link_to("Create a New Hangout!", new_viewing_party_path) %> 
