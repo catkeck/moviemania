@@ -23,6 +23,7 @@ class ViewingPartiesController < ApplicationController
     @viewing_party = ViewingParty.find(params[:id])
     @movie = @viewing_party.movie
     @user = current_user
+    @rotten_tomato = RottenTomatoes::RottenMovie.find(:title => @movie.name, :limit => 1)
   end
 
   def viewing_party_params

@@ -1,7 +1,12 @@
-<br /> <br />
-<h1> <%= @movie.name %> </h1> <br />
-<%= @movie.description %> <br />
-<img src = <%= @movie.movie_poster%> style="width:350px;height:500px">
+<br />
+<br />
+<div class="col-lg-4">
+  <img src = <%= @movie.movie_poster%> style="width:350px;height:500px"> 
+</div>
+<div class="col-lg-8">
+  <h1> <%= @movie.name %> </h1> <br />
+  <%= @rotten_tomato.synopsis %> <br />
+</div>
 <iframe type="text/html"
 <iframe width="560" height="315" src=<%= @movie.trailer%> frameborder="0" allowfullscreen></iframe>
 <br />
