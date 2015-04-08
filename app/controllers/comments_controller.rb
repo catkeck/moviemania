@@ -11,5 +11,3 @@ class CommentsController < ApplicationController
     redirect_to @viewing_party
   end
 end
-
-<%= background-image: url(/assets/images/background.jpg); %>
