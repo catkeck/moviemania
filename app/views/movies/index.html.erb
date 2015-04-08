@@ -1,4 +1,12 @@
+
+
 <h3> Movies currently playing: </h3> <br>
- <% @movies.each do |movie| %>
- 	<%= link_to(image_tag(movie.movie_poster, height: 300), movie) %> 
- <% end %> 
+ <div class="grid">
+   <% @movies.each do |movie| %>
+   <figure class="effect-honey">
+   	<%= link_to(image_tag(movie.movie_poster, height: 300, width: 220), movie) %> 
+    </figure>
+   <% end %> 
+  </div>
+
+

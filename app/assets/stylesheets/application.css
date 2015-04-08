@@ -15,7 +15,6 @@
  */
 
 @import url(http://fonts.googleapis.com/css?family=Lato:100,400,700);
-@import url(http://fonts.googleapis.com/css?family=Lobster);
 
 h1 {
     text-align: center;
@@ -24,9 +23,4 @@ h1 {
 
 * {
   font-family: 'Lato', sans-serif;
-}
-
-.logo a {
-  font-family: 'Lobster', cursive;
-  font-size: 6.5em;
 }
