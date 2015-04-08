@@ -13,5 +13,11 @@
 
 <div class="col-lg-12">
   <h3> Want to see the movie? Select one of the meetups below or create your own hang out! </h3>
+  <% @movie.viewing_parties.each do |viewing_party| %>
+    <img src = <%= viewing_party.movie.movie_poster%> style="width:70px;height:100px"> 
+    <%= link_to viewing_party.movie.name, viewing_party_path(viewing_party) %> - 
+    <%= viewing_party.theater %> - <%= viewing_party.viewing_time%> <br />
+    <br />
+  <% end %>
   <%= link_to("Create a New Hangout!", new_viewing_party_path) %> 
 </div>
