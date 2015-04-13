@@ -1,12 +1,29 @@
-<%= form_for @movie do |form| %>
-  <%= form.label :name %> <br />
-  <%= form.text_field :name %> <br />
-  <%= form.label :description %> <br />
-  <%= form.text_area :description %><br />
-  <%= form.label :trailer %> <br />
-  <%= form.text_field :trailer %> <br/>
-  <%= form.label :movie_poster %> <br />
-  <%= form.text_field :movie_poster %><br />
-  <%= form.submit "Add new film" %><br />
-<% end %>
+<br />
+<br />
 
+<div class="bootstrap-frm">
+  <h1> New Movie Form 
+   <span> Add a new movie here </span>
+   </h1>
+  <%= form_for @movie do |form| %>
+    <p> <label>
+    <%= form.label :name %> <br />
+    <%= form.text_field :name %> <br />
+    </label> </p>
+    <p> <label>
+    <%= form.label :description %> <br />
+    <%= form.text_area :description %><br />
+    </label></p>
+    <p><label>
+    <%= form.label :trailer %> <br />
+    <%= form.text_field :trailer %> <br/>
+    </label> </p>
+    <p> <label>
+    <%= form.label :movie_poster %> <br />
+    <%= form.text_field :movie_poster %><br />
+    </label> </p>
+    <p> <label>
+    <%= form.submit "Add new film" %><br />
+    </label> </p>
+  <% end %>
+</div>
