@@ -9,5 +9,6 @@ class CommentsController < ApplicationController
     @viewing_party = ViewingParty.find(params[:viewing_party_id])
     @comment = @viewing_party.comments.create!(params[:comment].permit!)
     redirect_to @viewing_party
+    @user = @comment.user
   end
 end
