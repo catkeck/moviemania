@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -37,7 +38,7 @@
     <%= javascript_include_tag "application" %>
   </head>
   <body>
-
+    <div id="wrap">
     <div class="navbar navbar-inverse navbar-static-top">
       <div class="container">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
@@ -63,26 +64,19 @@
               <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
               <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
             <% end %>
+            </p>
         </div>
-
       </div>
-
     </div>
-
-
-
-
     <div class="container">
       <div class="row">
           <%= bootstrap_flash %>
           <%= yield %>
       </div><!--/row-->
-
-      <footer>
-        <p>&copy; Moviemania 2015</p>
-      </footer>
-
-    </div> <!-- /container -->
-
+    </div>
+  </div>
   </body>
+  <footer class="footer">
+    <p>&copy; Moviemania 2015</p>
+  </footer>
 </html>
