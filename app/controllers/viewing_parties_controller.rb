@@ -14,6 +14,7 @@ class ViewingPartiesController < ApplicationController
     if @viewing_party.save
       @viewing_party.users.push(current_user)
       redirect_to viewing_party_path(@viewing_party.id)
+
     else
       render 'new'
     end
