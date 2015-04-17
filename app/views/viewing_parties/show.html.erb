@@ -6,10 +6,11 @@
 <div class="col-lg-8">
   <h1> <%= @movie.name %> </h1> <br />
   <%= @rotten_tomato.synopsis %> <br />
+  <div class = "trailer">
+    <iframe type="text/html" width="560" height="315" src=<%= @movie.trailer%> frameborder="0" allowfullscreen> </iframe>
+  </div>
+  <br />
 </div>
-<iframe type="text/html"
-<iframe width="560" height="315" src=<%= @movie.trailer%> frameborder="0" allowfullscreen></iframe>
-<br />
 
 This party will take place in <%= @viewing_party.theater %>, at <%= @viewing_party.viewing_time%>
 <% if @viewing_party.users.include? @user %>
