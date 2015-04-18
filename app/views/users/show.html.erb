@@ -1,9 +1,13 @@
-<h3> Welcome <%= @user.username%> </h3>
+<div class = "box">
+  <h4> Welcome <%= @user.username%> </h4>
+</div>
 
 <br />
 My Viewing Parties: <br />
 <% if @user.viewing_parties.empty? == true %>
-  You are not currently in any parties. You should join one!
+  <div class = "box">
+    You are not currently in any parties. You should join one!
+  </div>
 <% else @user.viewing_parties.each do |viewing_party| %>
   <%= link_to viewing_party.movie.name, viewing_party_path(viewing_party) %> - 
   <%= viewing_party.theater %> - <%= viewing_party.viewing_time%>

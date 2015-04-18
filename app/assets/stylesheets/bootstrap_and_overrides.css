@@ -203,3 +203,13 @@ html, body {
 body {
   background-image:url(../images/filmstrip.jpg) !important;
 }
+
+.box {
+  color: #dddfe0;
+  background-color: #000000;
+  opacity: 0.7;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
