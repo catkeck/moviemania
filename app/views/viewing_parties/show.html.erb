@@ -3,8 +3,20 @@
 <div class="col-lg-4">
   <img src = <%= @movie.movie_poster%> style="width:350px;height:500px">  <br />
   Rotten Tomatoes Ratings: <br />
-  Critics Rating: <%= @rotten_tomato.ratings.critics_score %>% - <%= @rotten_tomato.ratings.critics_rating%> <br />
+  Critics Rating: <%= @rotten_tomato.ratings.critics_score %>% - <%= @rotten_tomato.ratings.critics_rating%>    
+  <% if @rotten_tomato.ratings.critics_score.to_i < 60 %>
+    <img src = <%= asset_path('rotten_critic.jpg') %> style="width:40px">
+     <% else %>
+    <img src = <%= asset_path('fresh_critic.jpg') %> style="width:40px">
+   <% end %>
+      <br />
   Audience Rating: <%= @rotten_tomato.ratings.audience_score %>% - <%= @rotten_tomato.ratings.audience_rating%>
+    <% if @rotten_tomato.ratings.audience_score.to_i < 60 %>
+    <img src = <%= asset_path('rotten_user.jpg') %> style="width:40px">
+     <% else %>
+    <img src = <%= asset_path('fresh_user.jpg') %> style="width:40px">
+   <% end %>
+      <br />
 </div>
 <div class="col-lg-8">
   <div class = "box">
