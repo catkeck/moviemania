@@ -1,12 +1,18 @@
 <br />
 <br />
 <div class="col-lg-4">
-  <img src = <%= @movie.movie_poster%> style="width:350px;height:500px"> 
+  <img src = <%= @movie.movie_poster%> style="width:350px;height:500px">  <br />
+  Rotten Tomatoes Ratings: <br />
+  Critics Rating: <%= @rotten_tomato.ratings.critics_score %>% - <%= @rotten_tomato.ratings.critics_rating%> <br />
+  Audience Rating: <%= @rotten_tomato.ratings.audience_score %>% - <%= @rotten_tomato.ratings.audience_rating%>
 </div>
 <div class="col-lg-8">
   <div class = "box">
     <h1> <%= @movie.name %> </h1> <br />
     <%= @rotten_tomato.synopsis %> <br />
+    Rating : <%= @rotten_tomato.mpaa_rating %> <br />
+    Runtime : <%= @rotten_tomato.runtime %> minutes <br />
+    Critics Consensus : <%= @rotten_tomato.critics_consensus %> <br />
      </div>
     <br />
 
