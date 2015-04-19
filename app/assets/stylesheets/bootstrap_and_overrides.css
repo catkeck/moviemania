@@ -200,11 +200,6 @@ html, body {
   margin-left: auto;
   margin-right: auto;
 }
-body.home 
-{
-  background-image:url(../images/filmstrip.jpg) !important;
- }
-}
 
 .box {
   color: #dddfe0;
