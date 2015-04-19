@@ -19,13 +19,10 @@
       <br />
 </div>
 <div class="col-lg-8">
-  <div class = "box">
     <h1> <%= @movie.name %> </h1> <br />
     <%= @rotten_tomato.synopsis %> <br />
     Rating : <%= @rotten_tomato.mpaa_rating %> <br />
     Runtime : <%= @rotten_tomato.runtime %> minutes <br />
-    Critics Consensus : <%= @rotten_tomato.critics_consensus %> <br />
-  </div>
   <br />
   <div class = "trailer">
     <iframe type="text/html" width="560" height="315" src=<%= @movie.trailer%> frameborder="0" allowfullscreen> </iframe>
@@ -44,3 +41,5 @@
     <% end %>
   <%= link_to("Create a New Hangout!", new_viewing_party_path) %> 
 </div>
+<br />
+<br />

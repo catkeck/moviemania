@@ -19,13 +19,10 @@
       <br />
 </div>
 <div class="col-lg-8">
-  <div class = "box">
     <h1> <%= @movie.name %> </h1> <br />
     <%= @rotten_tomato.synopsis %> <br />
     Rating : <%= @rotten_tomato.mpaa_rating %> <br />
     Runtime : <%= @rotten_tomato.runtime %> minutes <br />
-    Critics Consensus : <%= @rotten_tomato.critics_consensus %> <br />
-     </div>
     <br />
 
     <div class = "trailer">
@@ -60,3 +57,5 @@ Current people going: <br/>
   </p>
   <p><%= form.submit "Add comment" %></p>
 <% end %>
+<br />
+<br />

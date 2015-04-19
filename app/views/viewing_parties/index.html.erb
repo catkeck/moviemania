@@ -1,7 +1,5 @@
-<div class = "box">
- <h1> Here is a list of upcoming hangouts </h1>
-</div>
- <% @viewing_parties.each do |viewing_party| %>
+<h1> Here is a list of upcoming hangouts </h1>
+<% @viewing_parties.each do |viewing_party| %>
  <img src = <%= viewing_party.movie.movie_poster%> style="width:70px;height:100px"> 
   <%= link_to viewing_party.movie.name, viewing_party_path(viewing_party) %> - 
   <%= viewing_party.theater %> - <%= viewing_party.viewing_time%> <br />
