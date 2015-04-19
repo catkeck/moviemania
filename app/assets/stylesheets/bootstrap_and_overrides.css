@@ -210,3 +210,8 @@ html, body {
   padding-top: 25px;
   padding-bottom: 25px;
 }
+
+body.homepage {
+  background-image:url(../images/filmstrip.jpg) !important;
+}
+

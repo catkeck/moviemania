@@ -2,6 +2,7 @@ class MoviesController < ApplicationController
 	def index
 		@movies = Movie.all
     @user = current_user
+    @home_page = true
 	end
 
 	def new
