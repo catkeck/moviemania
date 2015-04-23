@@ -1,8 +1,13 @@
 class MoviesController < ApplicationController
 	def index
-		@movies = Movie.all
+    if params[:q].present?
+      @movies = Movie.where(name: params[:q])
+    else
+		  @movies = Movie.all
+    end
     @user = current_user
     @home_page = true
+
 	end
 
 	def new

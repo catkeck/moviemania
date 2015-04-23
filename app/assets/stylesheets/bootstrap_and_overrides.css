@@ -95,13 +95,14 @@ html, body {
 
 .footer {
   position: relative;
-  margin-top: -50px; /* negative value of footer height */
+  /*margin-top: -50px; /* negative value of footer height */
   height: 50px;
   clear:both;
   padding-top:20px;
   background-color: #000000;
   color: #FFFFFF;
   padding-left: 10px;
+  margin-top: 50px;
 } 
 
 /* #### bootstrap Form #### */
@@ -114,7 +115,7 @@ html, body {
     padding: 20px 30px 20px 30px;
     font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #888;
-    border:1px solid #DDD;
+    border:10px solid #000;
     border-radius: 5px;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
