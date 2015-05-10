@@ -31,31 +31,37 @@
   <br />
 </div>
 
-This party will take place in <%= @viewing_party.theater %>, at <%= @viewing_party.viewing_time%>
-<% if @viewing_party.users.include? @user %>
-  <%= link_to 'leave', viewing_party_leave_path(@viewing_party), :method=> :post %>
-<% else %>
-  <%= link_to 'join', viewing_party_join_path(@viewing_party), :method=> :post %>
-<% end %>
-<br />
-<br />
-<br />
-Current people going: <br/>
-<% @viewing_party.users.each do |user| %>
-  <%= user.username %> <br />
-<% end %>
+<div class="col-lg-12">
+  <h3> This party will take place in <%= @viewing_party.theater %>, at <%= @viewing_party.viewing_time.to_formatted_s(:short)%> </h3>
+  <br />
+  <div class="btn">
+    <% if @viewing_party.users.include? @user %>
+      <%= link_to 'leave', viewing_party_leave_path(@viewing_party), :method=> :post %>
+    <% else %>
+      <%= link_to 'join', viewing_party_join_path(@viewing_party), :method=> :post %>
+    <% end %>
+  </div>
+  <br />
+  <br />
+  <br />
+ <h4> Current people going: </h4> <br/>
+  <% @viewing_party.users.each do |user| %>
+    <%= user.username %> <br />
+  <% end %>
 
-<h2> Comments </h2>
-<div id = "comments">
-  <%= render :partial => @viewing_party.comments %>
+   <div class="bootstrap-frm">
+    <h2> Comments </h2>
+    <div id = "comments">
+      <%= render :partial => @viewing_party.comments %>
+    </div>
+  <%= form_for [@viewing_party, Comment.new] do |form| %>
+    <p>
+      <%= form.label :body, "New comment" %><br/>
+      <%= form.text_area :body %>
+    </p>
+    <p><%= form.submit "Add comment" %></p>
+  <% end %>
+  </div>
+  <br />
+  <br />
 </div>
-
-<%= form_for [@viewing_party, Comment.new] do |form| %>
-  <p>
-    <%= form.label :body, "New comment" %><br/>
-    <%= form.text_area :body %>
-  </p>
-  <p><%= form.submit "Add comment" %></p>
-<% end %>
-<br />
-<br />

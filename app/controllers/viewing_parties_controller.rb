@@ -7,6 +7,7 @@ class ViewingPartiesController < ApplicationController
 
   def index
     @viewing_parties = ViewingParty.all
+    @start = 1
   end
 
   def create

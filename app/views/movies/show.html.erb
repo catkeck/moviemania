@@ -1,35 +1,33 @@
 <br />
 <br />
-<div class="descriptor">
-  <div class="col-lg-4">
-    <img src = <%= @movie.movie_poster%> style="width:350px;height:500px">  <br />
-    Rotten Tomatoes Ratings: <br />
-    Critics Rating: <%= @rotten_tomato.ratings.critics_score %>% - <%= @rotten_tomato.ratings.critics_rating%>    
-    <% if @rotten_tomato.ratings.critics_score.to_i < 60 %>
-      <img src = <%= asset_path('rotten_critic.jpg') %> style="width:40px">
-       <% else %>
-      <img src = <%= asset_path('fresh_critic.jpg') %> style="width:40px">
-     <% end %>
-        <br />
-    Audience Rating: <%= @rotten_tomato.ratings.audience_score %>% - <%= @rotten_tomato.ratings.audience_rating%>
-      <% if @rotten_tomato.ratings.audience_score.to_i < 60 %>
-      <img src = <%= asset_path('rotten_user.jpg') %> style="width:40px">
-       <% else %>
-      <img src = <%= asset_path('fresh_user.jpg') %> style="width:40px">
-     <% end %>
-        <br />
+<div class="col-lg-4">
+  <img src = <%= @movie.movie_poster%> style="width:350px;height:500px">  <br />
+  Rotten Tomatoes Ratings: <br />
+  Critics Rating: <%= @rotten_tomato.ratings.critics_score %>% - <%= @rotten_tomato.ratings.critics_rating%>    
+  <% if @rotten_tomato.ratings.critics_score.to_i < 60 %>
+    <img src = <%= asset_path('rotten_critic.jpg') %> style="width:40px">
+     <% else %>
+    <img src = <%= asset_path('fresh_critic.jpg') %> style="width:40px">
+   <% end %>
+      <br />
+  Audience Rating: <%= @rotten_tomato.ratings.audience_score %>% - <%= @rotten_tomato.ratings.audience_rating%>
+    <% if @rotten_tomato.ratings.audience_score.to_i < 60 %>
+    <img src = <%= asset_path('rotten_user.jpg') %> style="width:40px">
+     <% else %>
+    <img src = <%= asset_path('fresh_user.jpg') %> style="width:40px">
+   <% end %>
+      <br />
+</div>
+<div class="col-lg-8">
+    <h1> <%= @movie.name %> </h1> <br />
+    <%= @rotten_tomato.synopsis %> <br />
+    Rating : <%= @rotten_tomato.mpaa_rating %> <br />
+    Runtime : <%= @rotten_tomato.runtime %> minutes <br />
+  <br />
+  <div class = "trailer">
+    <iframe type="text/html" width="560" height="315" src=<%= @movie.trailer%> frameborder="0" allowfullscreen> </iframe>
   </div>
-  <div class="col-lg-8">
-      <h1> <%= @movie.name %> </h1> <br />
-      <%= @rotten_tomato.synopsis %> <br />
-      Rating : <%= @rotten_tomato.mpaa_rating %> <br />
-      Runtime : <%= @rotten_tomato.runtime %> minutes <br />
-    <br />
-    <div class = "trailer">
-      <iframe type="text/html" width="560" height="315" src=<%= @movie.trailer%> frameborder="0" allowfullscreen> </iframe>
-    </div>
-    <br />
-  </div>
+  <br />
 </div>
 <div class="col-lg-12">
   <h3> Want to see the movie? Select one of the meetups below or create your own hang out! </h3>

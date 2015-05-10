@@ -1,10 +1,12 @@
-<%= div_for comment do %>
-  <p>
-    <strong>
-      Posted <%= time_ago_in_words(comment.created_at) %> ago
-    </strong>
-    <br/>
+<div class = bootstrap-frm>
+  <%= div_for comment do %>
+    <p>
+      <strong>
+        Posted <%= time_ago_in_words(comment.created_at) %> ago
+      </strong>
+      <br/>
 
-    <%= comment.user.username%>  - <%=comment.body %>
-  </p>
-<% end %>
+      <%= comment.user.username%>  - <%=comment.body %>
+    </p>
+  <% end %>
+</div>
