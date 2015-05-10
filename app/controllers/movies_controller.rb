@@ -17,6 +17,7 @@ class MoviesController < ApplicationController
 	def show
 		@movie = Movie.find(params[:id])
     @rotten_tomato = RottenTomatoes::RottenMovie.find(:title => @movie.name, :limit => 1)
+    @start = 1
 	end
 
   def edit

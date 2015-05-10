@@ -4,10 +4,11 @@ class UsersController < ApplicationController
 
 	def index 
 		@users = User.all
+    @start = 1
 	end
 
 	def show
 		@user = current_user
-
+    @start = 1
 	end
 end

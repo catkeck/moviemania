@@ -31,15 +31,36 @@
 </div>
 <div class="col-lg-12">
   <h3> Want to see the movie? Select one of the meetups below or create your own hang out! </h3>
+   <table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
 
-  <% @movie.viewing_parties.each do |viewing_party| %>
+  <!-- Table Header -->
+    <thead>
+      <tr>
+        <th>Movie</th>
+        <th>Poster</th>
+        <th>Location</th>
+        <th>Time</th>
+      </tr>
+    </thead>
+    <!-- Table Header -->
+  <!-- Table Body -->
+  <tbody>
 
-      <img src = <%= viewing_party.movie.movie_poster%> style="width:70px;height:100px"> 
-      <%= link_to viewing_party.movie.name, viewing_party_path(viewing_party) %> - 
-      <%= viewing_party.theater %> - <%= viewing_party.viewing_time%> <br />
-      <br />
-    <% end %>
-  <%= link_to("Create a New Hangout!", new_viewing_party_path) %> 
-</div>
+    <% @movie.viewing_parties.each do |viewing_party| %>
+
+     <tr class="<%= @start%2 == 0 ? "even" : '' %>">
+        <td> <%= link_to viewing_party.movie.name, viewing_party_path(viewing_party) %> </td>
+        <td> <img src = <%= viewing_party.movie.movie_poster%> style="width:140px;height:200px"> </td>
+        <td>  <%= viewing_party.theater %> </td>
+        <td> <%= viewing_party.viewing_time.to_formatted_s(:short)%> </td>
+      </tr>
+      <%@start ++ 1%>
+    <%end%>
+    </tbody>
+  </table>
+    <div class="btn">
+     <%= link_to("Create a New Hangout!", new_viewing_party_path) %> 
+    </div>
+  </div>
 <br />
 <br />

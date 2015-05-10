@@ -1,10 +1,32 @@
-<h4> Welcome <%= @user.username%> </h4>
+<h1> Welcome <%= @user.username%> </h1>
 <br />
-My Viewing Parties: <br />
+<h2> My Viewing Parties: </h2>
+<br />
 <% if @user.viewing_parties.empty? == true %>
     You are not currently in any parties. You should join one!
-<% else @user.viewing_parties.each do |viewing_party| %>
-  <%= link_to viewing_party.movie.name, viewing_party_path(viewing_party) %> - 
-  <%= viewing_party.theater %> - <%= viewing_party.viewing_time%>
-<% end  %>
-<% end %>
+<% else %>
+  <table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
+    <!-- Table Header -->
+      <thead>
+        <tr>
+          <th>Movie</th>
+          <th>Poster</th>
+          <th>Location</th>
+          <th>Time</th>
+        </tr>
+      </thead>
+      <!-- Table Header -->
+    <!-- Table Body -->
+    <tbody>
+    <% @user.viewing_parties.each do |viewing_party| %>
+      <tr class="<%= @start%2 == 0 ? "even" : '' %>">
+       <td> <%= link_to viewing_party.movie.name, viewing_party_path(viewing_party) %> </td>
+        <td> <img src = <%= viewing_party.movie.movie_poster%> style="width:140px;height:200px"> </td>
+       <td>  <%= viewing_party.theater %> </td>
+       <td> <%= viewing_party.viewing_time.to_formatted_s(:short)%> </td>
+      </tr>
+     <% @start ++ 1%>
+    <%end%>
+    </tbody>
+  </table>
+<%end%>

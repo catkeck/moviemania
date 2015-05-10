@@ -44,11 +44,14 @@
   <br />
   <br />
   <br />
- <h4> Current people going: </h4> <br/>
-  <% @viewing_party.users.each do |user| %>
-    <%= user.username %> <br />
-  <% end %>
-
+  <div class="current-members">
+   <h4> Viewers who have already signed up! </h4> <br/>
+    <% @viewing_party.users.each do |user| %>
+      <%= user.username %> <br />
+    <% end %>
+  </div>
+  <br />
+  <br />
    <div class="bootstrap-frm">
     <h2> Comments </h2>
     <div id = "comments">
