@@ -160,7 +160,7 @@ html, body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: bold;
 }
-.bootstrap-frm input[type="text"], .bootstrap-frm input[type="email"], .bootstrap-frm textarea, .bootstrap-frm select{
+.bootstrap-frm input[type="text"], .bootstrap-frm input[type="email"], .bootstrap-frm input[type="password"], .bootstrap-frm textarea, .bootstrap-frm select{
     border: 1px solid #CCC;
     color: #888;
     height: 20px;
@@ -177,7 +177,7 @@ html, body {
     -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    text-align: center;
+    text-align: left;
 }
 .bootstrap-frm select {
     background: #FFF url('down-arrow.png') no-repeat right;
