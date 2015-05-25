@@ -415,9 +415,9 @@ a {
   color: #696969;
   text-decoration: none;
 }
-
-a:visited {
-  color: #696969;
+a:visited { 
+  background-color: #696969; !important
+  color: #696969; !important
   text-decoration: none;
 }
 
@@ -476,6 +476,6 @@ h2 {
     cursor: auto;
 }
 
-.center {
+.centered {
   text-align: center;
 }

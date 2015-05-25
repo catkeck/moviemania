@@ -2,7 +2,7 @@
   <h1> Welcome <%=@user.username%> </h1>
   <h2> My Viewing Parties </h2>
   <% if @user.viewing_parties.empty? == true %>
-    <div class = "center"> You are not currently in any parties. You should join one! </div>
+    <div class = "centered"> You are not currently in any parties. You should join one! </div>
   <% else %>
     <table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
       <!-- Table Header -->
