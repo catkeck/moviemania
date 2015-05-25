@@ -2,7 +2,7 @@
   <h1> Welcome <%=@user.username%> </h1>
   <h2> My Viewing Parties </h2>
   <% if @user.viewing_parties.empty? == true %>
-      You are not currently in any parties. You should join one!
+    <div class = "center"> You are not currently in any parties. You should join one! </div>
   <% else %>
     <table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
       <!-- Table Header -->
@@ -33,7 +33,7 @@
   <h1> <%=@viewed_user.username%>'s Profile </h1>
   <h2> <%=@viewed_user.username%>'s Viewing Parties </h2>
   <% if @viewed_user.viewing_parties.empty? == true %>
-      This user has not joined any viewing parties.
+    <div class = "center"> This user has not joined any viewing parties. </div>
   <% else %>
     <table cellspacing='0'> <!-- cellspacing='0' is important, must stay -->
       <!-- Table Header -->

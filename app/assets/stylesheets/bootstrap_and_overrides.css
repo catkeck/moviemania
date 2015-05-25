@@ -416,6 +416,11 @@ a {
   text-decoration: none;
 }
 
+a:visited {
+  color: #696969;
+  text-decoration: none;
+}
+
 a:hover {
   color: #000;
 }
@@ -469,4 +474,8 @@ h2 {
     color: -webkit-link;
     text-decoration: none;
     cursor: auto;
+}
+
+.center {
+  text-align: center;
 }

@@ -6,17 +6,25 @@
    <h2> Make your own movie hang out! </h2>
   <%= form_for @viewing_party do |form| %>
     <p> <label>
-      <%= form.select(:movie_id, options_for_select(@movies.map{|m| [m.name, m.id] }))%> <br />
+      <div class="field">
+         <%= form.select(:movie_id, options_for_select(@movies.map{|m| [m.name, m.id] }))%> <br />
+       </div>
     </label> </p>
     <p> <label>
-      <%= form.label :theater %> 
-      <%= form.select(:theater, ViewingParty::THEATRES)%> <br />
+      <div class="field">
+        <%= form.label :theater %> 
+        <%= form.select(:theater, ViewingParty::THEATRES)%> <br />
+      </div>
     </label> </p>
     <p> <label>
-      <%= datetime_select(:viewing_party, :viewing_time, ampm: true) %>
+      <div class="field">
+        <%= datetime_select(:viewing_party, :viewing_time, ampm: true) %>
+      </div>
     </label></p>
     <p><label>
+      <div class="field">
       <%= form.submit "Create" %>
+      </div>
     </label></p>
   <% end %>
 </div>
