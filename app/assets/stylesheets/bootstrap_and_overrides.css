@@ -379,9 +379,14 @@ table tr:hover td {
   text-decoration: none;
 }
 
-.btn a{
+.btn:link a{
   color: #ffffff;
-    text-decoration: none;
+  text-decoration: none;
+}
+
+.btn:visited a{
+  color: #ffffff;
+  text-decoration: none;
 }
 
 .btn:hover {

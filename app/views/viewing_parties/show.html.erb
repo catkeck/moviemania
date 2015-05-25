@@ -46,6 +46,7 @@
   <br />
   <div class="current-members">
    <h4> Viewers who have already signed up! </h4> <br/>
+   
     <% @viewing_party.users.each do |user| %>
       <%= user.username %> <br />
     <% end %>

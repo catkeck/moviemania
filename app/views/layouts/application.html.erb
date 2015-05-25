@@ -50,7 +50,7 @@
 
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
-            <li><%= link_to "MY PROFILE", profile_path %></li>
+            <li><%= link_to "MY PROFILE", users_path(current_user)%></li>
             <li><%= link_to "CREATE A NEW HANGOUT", new_viewing_party_path  %></li>
             <li><%= link_to "CURRENT HANGOUTS", viewing_parties_path  %></li>
             </ul>
